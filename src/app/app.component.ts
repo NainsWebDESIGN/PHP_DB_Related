@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = ['', ''];
+  text = '';
   constructor(private http: HttpClient) { }
-  submitExample(_Nick, _Gen) {
-    console.log(_Nick.value);
-    console.log(_Gen.value);
-    const data = JSON.stringify({ "nickname": _Nick.value, "gender": _Gen.value })
-    this.http.post('assets/test.php', data).subscribe(el => {
+  submitExample(_Nick) {
+    this.http.get('assets/test.php?q=' + _Nick.value).subscribe(el => {
       console.log(el);
+      this.text = String(el);
     })
   }
   ngOnInit() {

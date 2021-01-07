@@ -1,28 +1,58 @@
 <?php
-header('Content-Type: application/json; charset=UTF-8'); //設定資料類型為 json，編碼 utf-8
-if ($_SERVER['REQUEST_METHOD'] == "POST") { //如果是 POST 請求
-    @$nickname = $_POST["nickname"]; //取得 nickname POST 值
-    @$gender = $_POST["gender"]; //取得 gender POST 值
-    if ($nickname != null && $gender != null) { //如果 nickname 和 gender 都有填寫
-        //回傳 nickname 和 gender json 資料
-        echo json_encode(array(
-            'nickname' => $nickname,
-            'gender' => $gender
-        ));
-    } else {
-        //回傳 errorMsg json 資料
-        echo json_encode(array(
-            'errorMsg' => '資料未輸入完全！',
-            'nickname' => $nickname,
-            'gender' => $gender
-        ));
+// Array with names
+$a[] = "Anna";
+$a[] = "Brittany";
+$a[] = "Cinderella";
+$a[] = "Diana";
+$a[] = "Eva";
+$a[] = "Fiona";
+$a[] = "Gunda";
+$a[] = "Hege";
+$a[] = "Inga";
+$a[] = "Johanna";
+$a[] = "Kitty";
+$a[] = "Linda";
+$a[] = "Nina";
+$a[] = "Ophelia";
+$a[] = "Petunia";
+$a[] = "Amanda";
+$a[] = "Raquel";
+$a[] = "Cindy";
+$a[] = "Doris";
+$a[] = "Eve";
+$a[] = "Evita";
+$a[] = "Sunniva";
+$a[] = "Tove";
+$a[] = "Unni";
+$a[] = "Violet";
+$a[] = "Liza";
+$a[] = "Elizabeth";
+$a[] = "Ellen";
+$a[] = "Wenche";
+$a[] = "Vicky";
+
+// get the q parameter from URL
+//從網址獲取q參數
+$q = $_REQUEST["q"];
+
+$hint = "";
+
+// lookup all hints from array if $q is different from ""
+//如果$ q與“”不同，則從數組中查找所有提示
+if ($q !== "") {
+  $q = strtolower($q);
+  $len=strlen($q);
+  foreach($a as $name) {
+    if (stristr($q, substr($name, 0, $len))) {
+      if ($hint === "") {
+        $hint = $name;
+      } else {
+        $hint .= ", $name";
+      }
     }
-} else {
-    //回傳 errorMsg json 資料
-    echo json_encode(array(
-        'errorMsg' => '請求無效，只允許 POST 方式訪問！',
-        'nickname' => $nickname,
-        'gender' => $gender
-    ));
+  }
 }
+
+// Output "no suggestion" if no hint was found or output correct values
+echo $hint === "" ? "沒找到喔" : $hint;
 ?>
