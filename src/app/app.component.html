@@ -1,20 +1,40 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<form id="demo">
+  暱稱：<input type="text" id="nickname" #nickname>
+  性別：
+  <select id="gender" #gender>
+    <option value="">請選擇</option>
+    <option value="男">男</option>
+    <option value="女">女</option>
+    <option value="其他">其他</option>
+  </select>
+  <button type="button" id="submitExample" (click)='submitExample(nickname, gender)'>執行範例</button>
+</form>
 
+<!-- <script>
+  $(document).ready(function () {
+    $("#submitExample").click(function () { //ID 為 submitExample 的按鈕被點擊時
+      $.ajax({
+        type: "POST", //傳送方式
+        url: "assets/test.php", //傳送目的地
+        dataType: "json", //資料格式
+        data: { //傳送資料
+          nickname: $("#nickname").val(), //表單欄位 ID nickname
+          gender: $("#gender").val() //表單欄位 ID gender
+        },
+        success: function (data) {
+          if (data.nickname) { //如果後端回傳 json 資料有 nickname
+            $("#demo")[0].reset(); //重設 ID 為 demo 的 form (表單)
+            $("#result").html('<font color="#007500">您的暱稱為「<font color="#0000ff">' + data.nickname + '</font>」，性別為「<font color="#0000ff">' + data.gender + '</font>」！</font>');
+          } else { //否則讀取後端回傳 json 資料 errorMsg 顯示錯誤訊息
+            $("#demo")[0].reset(); //重設 ID 為 demo 的 form (表單)
+            $("#result").html('<font color="#ff0000">' + data.errorMsg + '</font>');
+          }
+        },
+        error: function (jqXHR) {
+          $("#demo")[0].reset(); //重設 ID 為 demo 的 form (表單)
+          $("#result").html('<font color="#ff0000">發生錯誤：' + jqXHR.status + '</font>');
+        }
+      })
+    })
+  });
+</script> -->
