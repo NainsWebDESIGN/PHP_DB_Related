@@ -8,5 +8,10 @@
     <option value="其他">其他</option>
   </select>
   <button type="button" id="submitExample" (click)='submitExample(nickname,gender)'>執行範例</button>
-</form><br><br>
-<p>{{text}}</p>
+</form>
+<p *ngIf="!data.errorMsg">
+  您登入進PHP的是:<br>
+  暱稱：{{data.nickname}}<br>
+  性別：{{data.gender}}
+</p>
+<p *ngIf="data.errorMsg">{{data.errorMsg}}</p>
