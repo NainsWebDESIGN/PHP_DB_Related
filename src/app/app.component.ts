@@ -7,6 +7,7 @@ import { HttpClient, } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  text = "";
   constructor(private http: HttpClient) { }
   submitExample(_Nick, _Gen) {
     console.log(_Nick.value);
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
     data.append('nickname', _Nick.value)
     data.append('gender', _Gen.value)
     this.http.post('assets/test.php', data).subscribe(el => {
-      console.log(el);
+      Array(el).length == 1 ? this.text = el[0] : this.text = "nickname is " + el[0] + " , gender is " + el[1];
     })
   }
   ngOnInit() {
