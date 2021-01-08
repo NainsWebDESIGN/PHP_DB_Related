@@ -7,12 +7,15 @@ import { HttpClient, } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  text = '';
   constructor(private http: HttpClient) { }
-  submitExample(_Nick) {
-    this.http.get('assets/test.php?q=' + _Nick.value).subscribe(el => {
+  submitExample(_Nick, _Gen) {
+    console.log(_Nick.value);
+    console.log(_Gen.value);
+    const data = new FormData();
+    data.append('nickname', _Nick.value)
+    data.append('gender', _Gen.value)
+    this.http.post('assets/test.php', data).subscribe(el => {
       console.log(el);
-      this.text = String(el);
     })
   }
   ngOnInit() {
