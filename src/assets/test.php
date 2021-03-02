@@ -6,10 +6,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") { //如果是 POST 請求
     $data = array();
     if ($nickname && $gender) { //如果 nickname 和 gender 都有填寫
         //回傳 nickname 和 gender json 資料
-        array_push($data, array( 'nickname' => $nickname, 'gender' => $gender ));
+        // array_push($data, array( 'nickname' => $nickname, 'gender' => $gender ))
+        $data = array( 'nickname' => $nickname, 'gender' => $gender );
     } else {
         //回傳 errorMsg json 資料
-        array_push($data, array( 'errorMsg' => '資料未輸入完全！' ));
+        $data = array( 'errorMsg' => '資料未輸入完全！' );
     }
     echo json_encode($data);
 } else {
