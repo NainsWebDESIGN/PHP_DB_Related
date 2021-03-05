@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
+import { PostServerService } from '@service/PostServerService';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [PostServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
