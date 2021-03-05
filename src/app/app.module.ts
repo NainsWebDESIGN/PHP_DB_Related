@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { PostServerService } from '@service/PostServerService';
+import { PostServerService } from '@service/postServer.service';
 
 
 @NgModule({

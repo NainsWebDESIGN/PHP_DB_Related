@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostServerService } from '@service/PostServerService';
+import { PostServerService } from '@service/postServer.service';
 
 @Component({
   selector: 'app-root',
