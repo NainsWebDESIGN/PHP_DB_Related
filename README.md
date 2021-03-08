@@ -33,3 +33,5 @@ GRANT ALL PRIVILEGES ON 資料庫名稱.* TO '帳號'@'網域 IP';
     由 service 改成 FormData();
 
 2.  合併資料庫相關
+
+3.  完整取得資料

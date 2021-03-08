@@ -9,9 +9,12 @@
   </select>
   <button type="button" id="submitExample" (click)='submitExample(nickname,gender)'>執行範例</button>
 </form>
-<p *ngIf="!data.errorMsg">
-  您登入進PHP的是:<br>
-  暱稱：{{data.nickname}}<br>
-  性別：{{data.gender}}
-</p>
+資料庫總表:
+<ng-container *ngFor="let even of data">
+  <p *ngIf="!data.errorMsg">
+    第{{even.ID}}組為:<br>
+    暱稱：{{even.Name}}<br>
+    性別：{{even.Text}}
+  </p>
+</ng-container>
 <p *ngIf="data.errorMsg">{{data.errorMsg}}</p>
