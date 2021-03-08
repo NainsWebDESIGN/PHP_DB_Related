@@ -8,10 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") { //如果是 POST 請求
         //回傳 nickname 和 gender json 資料
         // array_push($data, array( 'nickname' => $nickname, 'gender' => $gender ))
         // $data = array( 'nickname' => $nickname, 'gender' => $gender );
-    $DB_server = "localhost"; # 你的網域IP
-    $DB_user = "Nains"; # 你的帳號
-    $DB_pass = "shizuna1221"; # 你的密碼
-    $DB_name = "NainsDB"; # 你的資料庫
+        $DB_server = "your IP"; # 你的網域IP
+        $DB_user = "your userName"; # 你的帳號
+        $DB_pass = "your passWord"; # 你的密碼
+        $DB_name = "your dataBase"; # 你的資料庫
 
     $connection = new mysqli($DB_server, $DB_user, $DB_pass, $DB_name);
 
