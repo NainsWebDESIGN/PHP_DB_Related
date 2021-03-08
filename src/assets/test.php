@@ -5,9 +5,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") { //如果是 POST 請求
     @$gender = $_POST['gender']; //取得 gender POST 值
     $data = array();
     if ($nickname && $gender) { //如果 nickname 和 gender 都有填寫
-        //回傳 nickname 和 gender json 資料
-        // array_push($data, array( 'nickname' => $nickname, 'gender' => $gender ))
-        // $data = array( 'nickname' => $nickname, 'gender' => $gender );
         $DB_server = "your IP"; # 你的網域IP
         $DB_user = "your userName"; # 你的帳號
         $DB_pass = "your passWord"; # 你的密碼
@@ -22,15 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") { //如果是 POST 請求
     if($connection -> connect_error){
         $data = array( 'failed' => $connection -> connect_error );
     }else{
-        // $data = array( 'succes' => "成功" );
+        // $data = array( 'succes' => "成功連線到資料庫" );
         if($connection->query($sqlInner) === TRUE){
-            // $data = array( 'innerSucces' => "成功建立NainsCreate資料表的資料" );
+            // $data = array( 'innerSucces' => "成功新增NainsCreate資料表的資料" );
             if($result = $connection->query($sqlTable)){
                 while($row = $result->fetch_row()){
                     array_push($data, array('ID' => $row[0], 'Name' => $row[1], 'Text' => $row[2]));
                     // $data = array('ID' => $row[0], 'Name' => $row[1], 'Text' => $row[2]);
-                 // echo "ID." . $row[0] . " : Name." . $row[1] . " , Text." . $row[2] . "<br>";
-                 // echo json_encode($data) . "<br>";
                 }
                 $result->close();
             }else{
