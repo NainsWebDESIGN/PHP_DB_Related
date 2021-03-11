@@ -22,6 +22,14 @@ CREATE USER '帳號'@'網域 IP' IDENTIFIED BY '密碼';
 GRANT ALL PRIVILEGES ON 資料庫名稱.* TO '帳號'@'網域 IP';
 ```
 
+#### 基礎語法:
+
+可至[W3School](https://www.w3schools.com/sql/default.asp)查詢，如:
+
+```javascript
+UPDATE Table SET title = 'value' WHERE id = number;
+```
+
 #### windows 安裝:
 
 .msi 為 windows 安裝檔，可至[官網](https://downloads.mariadb.org/)自行下載
