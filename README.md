@@ -30,9 +30,9 @@ GRANT ALL PRIVILEGES ON 資料庫名稱.* TO '帳號'@'網域 IP';
 UPDATE Table SET title = 'value' WHERE id = number;
 ```
 
-#### 常用及重要語法:
+#### 新增Table常用及重要語法:
 
-可至[MySQL的重要語法](https://www.cynet.com.tw/learning/MySql/Page04.htm)查詢
+可至[CREATE TABLE屬性](https://www.w3schools.com/sql/sql_datatypes.asp)查詢
 
 ```javascript
 CREATE TABLE NainsTable (
