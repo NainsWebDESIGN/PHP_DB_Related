@@ -30,16 +30,17 @@ GRANT ALL PRIVILEGES ON 資料庫名稱.* TO '帳號'@'網域 IP';
 UPDATE Table SET title = 'value' WHERE id = number;
 ```
 
+#### 常用及重要語法:
+
+可至[MySQL的重要語法](https://www.cynet.com.tw/learning/MySql/Page04.htm)查詢
+
+```javascript
+create table basic(
+　　no char(4)
+　　name char(10)
+　　id char(10));
+```
+
 #### windows 安裝:
 
 .msi 為 windows 安裝檔，可至[官網](https://downloads.mariadb.org/)自行下載
-
-### 最後紀錄
-
-1.  `new FormData()`改成 service 獨立操作
-    各 component 負責丟物件過去就行
-    由 service 改成 FormData();
-
-2.  合併資料庫相關
-
-3.  完整取得資料
