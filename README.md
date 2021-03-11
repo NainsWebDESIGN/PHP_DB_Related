@@ -35,10 +35,10 @@ UPDATE Table SET title = 'value' WHERE id = number;
 可至[MySQL的重要語法](https://www.cynet.com.tw/learning/MySql/Page04.htm)查詢
 
 ```javascript
-create table basic(
-　　no char(4)
-　　name char(10)
-　　id char(10));
+CREATE TABLE NainsTable (
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        name varchar(50) NOT NULL,
+        text varchar(200));
 ```
 
 #### windows 安裝:
