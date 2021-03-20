@@ -22,7 +22,7 @@ CREATE USER '帳號'@'網域 IP' IDENTIFIED BY '密碼';
 GRANT ALL PRIVILEGES ON 資料庫名稱.* TO '帳號'@'網域 IP';
 ```
 
-### 查詢伺服器端口:
+#### 查詢伺服器端口:
 
 ```javascript
 SHOW GLOBAL VARIABLES LIKE 'PORT';
